@@ -10,9 +10,11 @@
 		6766E15B460471A693435146 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E0122CA27357EDDAF31B38 /* Pods_GitHubSearch.framework */; };
 		BD2F4AB228816C4400C3BEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB128816C4400C3BEA3 /* AppDelegate.swift */; };
 		BD2F4AB428816C4400C3BEA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB328816C4400C3BEA3 /* SceneDelegate.swift */; };
-		BD2F4AB628816C4400C3BEA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB528816C4400C3BEA3 /* ViewController.swift */; };
+		BD2F4AB628816C4400C3BEA3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */; };
 		BD2F4ABB28816C4500C3BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2F4ABA28816C4500C3BEA3 /* Assets.xcassets */; };
 		BD2F4ABE28816C4500C3BEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2F4ABC28816C4500C3BEA3 /* LaunchScreen.storyboard */; };
+		BDBA4E1D28853FCC00770520 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */; };
+		BDC714352883E55C0071AF13 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC714342883E55C0071AF13 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +23,12 @@
 		BD2F4AAE28816C4400C3BEA3 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2F4AB128816C4400C3BEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD2F4AB328816C4400C3BEA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD2F4AB528816C4400C3BEA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BD2F4ABA28816C4500C3BEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD2F4ABD28816C4500C3BEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD2F4ABF28816C4500C3BEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
+		BDC714342883E55C0071AF13 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D1E0122CA27357EDDAF31B38 /* Pods_GitHubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,14 +82,24 @@
 		BD2F4AB028816C4400C3BEA3 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				BDC714362883E5A00071AF13 /* Views */,
 				BD2F4AB128816C4400C3BEA3 /* AppDelegate.swift */,
 				BD2F4AB328816C4400C3BEA3 /* SceneDelegate.swift */,
-				BD2F4AB528816C4400C3BEA3 /* ViewController.swift */,
 				BD2F4ABA28816C4500C3BEA3 /* Assets.xcassets */,
 				BD2F4ABC28816C4500C3BEA3 /* LaunchScreen.storyboard */,
 				BD2F4ABF28816C4500C3BEA3 /* Info.plist */,
 			);
 			path = GitHubSearch;
+			sourceTree = "<group>";
+		};
+		BDC714362883E5A00071AF13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */,
+				BDC714342883E55C0071AF13 /* TabBarController.swift */,
+				BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD2F4AB628816C4400C3BEA3 /* ViewController.swift in Sources */,
+				BDC714352883E55C0071AF13 /* TabBarController.swift in Sources */,
+				BD2F4AB628816C4400C3BEA3 /* SearchViewController.swift in Sources */,
 				BD2F4AB228816C4400C3BEA3 /* AppDelegate.swift in Sources */,
+				BDBA4E1D28853FCC00770520 /* BookMarkViewController.swift in Sources */,
 				BD2F4AB428816C4400C3BEA3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

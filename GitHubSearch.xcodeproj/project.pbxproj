@@ -95,8 +95,8 @@
 		BDC714362883E5A00071AF13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */,
 				BDC714342883E55C0071AF13 /* TabBarController.swift */,
+				BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */,
 				BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */,
 			);
 			path = Views;

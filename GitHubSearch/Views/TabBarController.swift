@@ -11,23 +11,26 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+    }
+    
+    private func setUI() {
+        let searchViewController = UINavigationController(rootViewController: SearchViewController())
+        let bookMarkViewController = UINavigationController(rootViewController: BookMarkViewController())
         
-        let searchViewController = SearchViewController()
         searchViewController.tabBarItem = UITabBarItem(
             title: "Search",
             image: UIImage(systemName: "house"),
             selectedImage: UIImage(systemName: "house.fill")
         )
         
-        let bookMarkViewController = BookMarkViewController()
         bookMarkViewController.tabBarItem = UITabBarItem(
             title: "BookMark",
             image: UIImage(systemName: "house"),
             selectedImage: UIImage(systemName: "house.fill")
         )
-        
-        
+
         self.viewControllers = [searchViewController, bookMarkViewController]
-        
     }
+    
 }

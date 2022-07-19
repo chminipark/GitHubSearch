@@ -20,7 +20,7 @@ GitHub API를 활용한 깃헙 레포 검색 앱
     - 즐겨찾기 목록 관리
 
 # Library
-> RxSwift, RxCocoa, Moya(RxMoya), SnapKit, Then
+> RxSwift, RxCocoa, Moya
 
 # Rules
 - [Swift Style Guide](https://github.com/StyleShare/swift-style-guide)

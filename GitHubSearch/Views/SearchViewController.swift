@@ -35,15 +35,15 @@ class SearchViewController: UIViewController {
     
     private func configureSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
-        self.navigationItem.searchController = searchController
-        self.navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.hidesNavigationBarDuringPresentation = false
     }
     
     private func configureTableView() {
         tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.frame = view.bounds
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")

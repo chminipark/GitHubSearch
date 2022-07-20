@@ -20,13 +20,13 @@ GitHub API를 활용한 깃헙 레포 검색 앱
     - 즐겨찾기 목록 관리
 
 # Library
-> RxSwift, RxCocoa, Moya(RxMoya), SnapKit, Then
+> RxSwift, RxCocoa, Moya
 
 # Rules
 - [Swift Style Guide](https://github.com/StyleShare/swift-style-guide)
 - [Commit Convention](https://velog.io/@shin6403/Git-git-%EC%BB%A4%EB%B0%8B-%EC%BB%A8%EB%B2%A4%EC%85%98-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)
 - Git Flow 적용
-    - develop, main, feature 브랜치 운영
+    - main, feature 브랜치 운영
     - 되도록 두줄
 
 # Issue

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD2C1AE82887E154002A149E /* GitHubSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C1AE72887E154002A149E /* GitHubSearchView.swift */; };
 		BD2F4AB228816C4400C3BEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB128816C4400C3BEA3 /* AppDelegate.swift */; };
 		BD2F4AB428816C4400C3BEA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB328816C4400C3BEA3 /* SceneDelegate.swift */; };
-		BD2F4AB628816C4400C3BEA3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */; };
+		BD2F4AB628816C4400C3BEA3 /* GitHubSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB528816C4400C3BEA3 /* GitHubSearchViewController.swift */; };
 		BD2F4ABB28816C4500C3BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2F4ABA28816C4500C3BEA3 /* Assets.xcassets */; };
 		BD2F4ABE28816C4500C3BEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2F4ABC28816C4500C3BEA3 /* LaunchScreen.storyboard */; };
 		BDBA4E1D28853FCC00770520 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */; };
@@ -20,9 +21,10 @@
 /* Begin PBXFileReference section */
 		3E234541B5D640F83DCA267E /* Pods_GitHubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2C1AD82887C76D002A149E /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2C1AE72887E154002A149E /* GitHubSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchView.swift; sourceTree = "<group>"; };
 		BD2F4AB128816C4400C3BEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD2F4AB328816C4400C3BEA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BD2F4AB528816C4400C3BEA3 /* GitHubSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchViewController.swift; sourceTree = "<group>"; };
 		BD2F4ABA28816C4500C3BEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD2F4ABD28816C4500C3BEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD2F4ABF28816C4500C3BEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,7 +84,9 @@
 		BD2C1ADB2887DB44002A149E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				BDC714362883E5A00071AF13 /* Views */,
+				BD2C1ADE2887DD8E002A149E /* TabBar */,
+				BD2C1AE02887DE1E002A149E /* GitHubSearch */,
+				BD2C1AE32887DE69002A149E /* BookMark */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -99,6 +103,71 @@
 			children = (
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		BD2C1ADE2887DD8E002A149E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BDC714342883E55C0071AF13 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BD2C1AE02887DE1E002A149E /* GitHubSearch */ = {
+			isa = PBXGroup;
+			children = (
+				BD2C1AE12887DE47002A149E /* View */,
+				BD2C1AE22887DE50002A149E /* ViewController */,
+				BD2C1AE52887DE88002A149E /* ViewModel */,
+			);
+			path = GitHubSearch;
+			sourceTree = "<group>";
+		};
+		BD2C1AE12887DE47002A149E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD2C1AE72887E154002A149E /* GitHubSearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD2C1AE22887DE50002A149E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD2F4AB528816C4400C3BEA3 /* GitHubSearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BD2C1AE32887DE69002A149E /* BookMark */ = {
+			isa = PBXGroup;
+			children = (
+				BD2C1AE42887DE7C002A149E /* View */,
+				BDC714362883E5A00071AF13 /* ViewController */,
+				BD2C1AE62887DEB0002A149E /* ViewModel */,
+			);
+			path = BookMark;
+			sourceTree = "<group>";
+		};
+		BD2C1AE42887DE7C002A149E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD2C1AE52887DE88002A149E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BD2C1AE62887DEB0002A149E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BD2F4AA528816C4400C3BEA3 = {
@@ -124,14 +193,12 @@
 			path = GitHubSearch;
 			sourceTree = "<group>";
 		};
-		BDC714362883E5A00071AF13 /* Views */ = {
+		BDC714362883E5A00071AF13 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BDC714342883E55C0071AF13 /* TabBarController.swift */,
-				BD2F4AB528816C4400C3BEA3 /* SearchViewController.swift */,
 				BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */,
 			);
-			path = Views;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDC714352883E55C0071AF13 /* TabBarController.swift in Sources */,
-				BD2F4AB628816C4400C3BEA3 /* SearchViewController.swift in Sources */,
+				BD2C1AE82887E154002A149E /* GitHubSearchView.swift in Sources */,
+				BD2F4AB628816C4400C3BEA3 /* GitHubSearchViewController.swift in Sources */,
 				BD2F4AB228816C4400C3BEA3 /* AppDelegate.swift in Sources */,
 				BDBA4E1D28853FCC00770520 /* BookMarkViewController.swift in Sources */,
 				BD2F4AB428816C4400C3BEA3 /* SceneDelegate.swift in Sources */,

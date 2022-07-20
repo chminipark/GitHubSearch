@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
     
     private var tableView: UITableView!
+    private var searchController: UISearchController!
+    
+    let disposeBag = DisposeBag()
     
     let data: Array<String> = {
         var data = [String]()
@@ -22,6 +27,12 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        
+        searchController.searchBar.rx.text
+            .subscribe(onNext: { text in
+                print(text)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setUI() {
@@ -34,7 +45,7 @@ class SearchViewController: UIViewController {
     }
     
     private func configureSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
+        searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.hidesNavigationBarDuringPresentation = false

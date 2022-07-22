@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
     }
     
     private func setUI() {
-        let searchViewController = UINavigationController(rootViewController: SearchViewController())
+        let searchViewController = UINavigationController(rootViewController: GitHubSearchViewController())
         let bookMarkViewController = UINavigationController(rootViewController: BookMarkViewController())
         
         searchViewController.tabBarItem = UITabBarItem(

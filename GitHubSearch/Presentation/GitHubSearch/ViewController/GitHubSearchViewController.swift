@@ -1,15 +1,26 @@
 //
-//  SearchViewController.swift
+//  GitHubSearchViewController.swift
 //  GitHubSearch
 //
 //  Created by chmini on 2022/07/15.
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class SearchViewController: UIViewController {
+class GitHubSearchViewController: UIViewController {
     
-    private var tableView: UITableView!
+    lazy var gitHubSearchView = GitHubSearchView()
+    lazy var gitHubSearchViewModel = GitHubSearchViewModel()
+    lazy var searchController = UISearchController(searchResultsController: nil)
+    
+    private lazy var input = GitHubSearchViewModel.Input(
+        searchBarText: searchController.searchBar.rx.text.orEmpty.asDriver()
+    )
+    private lazy var output = gitHubSearchViewModel.transform(input: input)
+    
+    let disposeBag = DisposeBag()
     
     let data: Array<String> = {
         var data = [String]()
@@ -19,42 +30,48 @@ class SearchViewController: UIViewController {
         return data
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUI()
+    override func loadView() {
+        super.loadView()
+        view = gitHubSearchView
     }
     
-    private func setUI() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        bind()
+    }
+    
+    private func setup() {
         view.backgroundColor = .white
         self.navigationItem.title = "GitHub Search"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         configureSearchBar()
-        configureTableView()
+        configureGitHubSearchView()
     }
     
     private func configureSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.hidesNavigationBarDuringPresentation = false
     }
     
-    private func configureTableView() {
-        tableView = UITableView()
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.frame = view.bounds
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+    private func configureGitHubSearchView() {
+        gitHubSearchView.tableView.delegate = self
+        gitHubSearchView.tableView.dataSource = self
+    }
+    
+    private func bind() {
+        output.testText
+            .drive(onNext: { text in
+                print(text)
+            })
+            .disposed(by: disposeBag)
     }
     
 }
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension GitHubSearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count

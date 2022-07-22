@@ -19,6 +19,8 @@ class GitHubSearchViewModel: ViewModel {
     func transform(input: Input) -> Output {
         
         let testText = input.searchBarText
+            .debounce(.seconds(1))
+            .filter { $0 != "" }
         
         return Output(testText: testText)
     }

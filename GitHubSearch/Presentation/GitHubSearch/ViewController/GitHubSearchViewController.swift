@@ -12,7 +12,13 @@ import RxCocoa
 class GitHubSearchViewController: UIViewController {
     
     lazy var gitHubSearchView = GitHubSearchView()
+    lazy var gitHubSearchViewModel = GitHubSearchViewModel()
     lazy var searchController = UISearchController(searchResultsController: nil)
+    
+    private lazy var input = GitHubSearchViewModel.Input(
+        searchBarText: searchController.searchBar.rx.text.orEmpty.asDriver()
+    )
+    private lazy var output = gitHubSearchViewModel.transform(input: input)
     
     let disposeBag = DisposeBag()
     
@@ -32,6 +38,7 @@ class GitHubSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        bind()
     }
     
     private func setup() {
@@ -52,6 +59,14 @@ class GitHubSearchViewController: UIViewController {
     private func configureGitHubSearchView() {
         gitHubSearchView.tableView.delegate = self
         gitHubSearchView.tableView.dataSource = self
+    }
+    
+    private func bind() {
+        output.testText
+            .drive(onNext: { text in
+                print(text)
+            })
+            .disposed(by: disposeBag)
     }
     
 }

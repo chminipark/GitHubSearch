@@ -41,18 +41,18 @@ class GitHubSearchViewController: UIViewController {
         setup()
         bind()
         
-        let provider = MoyaProvider<GitHubSearchAPI>(plugins: [GitHubSearchAPIPlugin()])
-        let searchText = "RxSwift"
-        provider.request(.searchRepo(text: searchText)) { result in
-            switch result {
-            case .success(let response):
-                let decoded = try? response.map(Repo.self)
-                print(decoded?.totalCount)
-            
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        let provider = MoyaProvider<GitHubSearchAPI>(plugins: [GitHubSearchAPIPlugin()])
+//        let searchText = "RxSwift"
+//        provider.request(.searchRepo(text: searchText)) { result in
+//            switch result {
+//            case .success(let response):
+//                let decoded = try? response.map(GitHubRepoSearchResponse.self)
+//                print(decoded?.repositories.first?.fullName)
+//
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
     
     private func setup() {

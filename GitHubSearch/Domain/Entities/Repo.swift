@@ -7,10 +7,22 @@
 
 import Foundation
 
-struct Repo: Decodable {
-    let totalCount: Int
+struct GitHubRepoSearchResponse: Decodable {
+    let repositories: [Repo]
     
     private enum CodingKeys: String, CodingKey {
-        case totalCount = "total_count"
+        case repositories = "items"
+    }
+}
+
+struct Repo: Decodable {
+    let name: String
+    let fullName: String
+    let starCount: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case fullName = "full_name"
+        case starCount = "stargazers_count"
     }
 }

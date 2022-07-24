@@ -8,5 +8,6 @@ target 'GitHubSearch' do
   # Pods for GitHubSearch
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Moya'
 
 end

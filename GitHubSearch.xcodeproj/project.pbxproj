@@ -13,9 +13,11 @@
 		BD2F4AB628816C4400C3BEA3 /* GitHubSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4AB528816C4400C3BEA3 /* GitHubSearchViewController.swift */; };
 		BD2F4ABB28816C4500C3BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2F4ABA28816C4500C3BEA3 /* Assets.xcassets */; };
 		BD2F4ABE28816C4500C3BEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2F4ABC28816C4500C3BEA3 /* LaunchScreen.storyboard */; };
+		BD38F2BD288AAB7300CC54F8 /* GitHubSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38F2BC288AAB7300CC54F8 /* GitHubSearchAPI.swift */; };
 		BD76F641288826890087F555 /* GitHubSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD76F640288826890087F555 /* GitHubSearchViewModel.swift */; };
 		BDBA4E1D28853FCC00770520 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */; };
 		BDC714352883E55C0071AF13 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC714342883E55C0071AF13 /* TabBarController.swift */; };
+		BDD35240288D413700E17BF6 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3523F288D413700E17BF6 /* Repo.swift */; };
 		D4EFF964BCEE82B79E506276 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E234541B5D640F83DCA267E /* Pods_GitHubSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +31,11 @@
 		BD2F4ABA28816C4500C3BEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD2F4ABD28816C4500C3BEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD2F4ABF28816C4500C3BEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD38F2BC288AAB7300CC54F8 /* GitHubSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchAPI.swift; sourceTree = "<group>"; };
 		BD76F640288826890087F555 /* GitHubSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchViewModel.swift; sourceTree = "<group>"; };
 		BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
 		BDC714342883E55C0071AF13 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BDD3523F288D413700E17BF6 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		C6716F22A269D5AAB32CADF4 /* Pods-GitHubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.release.xcconfig"; path = "Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.release.xcconfig"; sourceTree = "<group>"; };
 		FE0DAA8ED9F621F03D333F04 /* Pods-GitHubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +107,7 @@
 		BD2C1ADD2887DB65002A149E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				BDD3523E288D410F00E17BF6 /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -186,14 +191,23 @@
 		BD2F4AB028816C4400C3BEA3 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				BD2C1AD92887D81B002A149E /* Application */,
 				BD2C1ADB2887DB44002A149E /* Presentation */,
 				BD2C1ADD2887DB65002A149E /* Domain */,
 				BD2C1ADC2887DB61002A149E /* Data */,
-				BD2C1AD92887D81B002A149E /* Application */,
+				BD38F2BB288AAB4300CC54F8 /* Network */,
 				BD2C1ADA2887D858002A149E /* Resources */,
 				BD2F4ABF28816C4500C3BEA3 /* Info.plist */,
 			);
 			path = GitHubSearch;
+			sourceTree = "<group>";
+		};
+		BD38F2BB288AAB4300CC54F8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BD38F2BC288AAB7300CC54F8 /* GitHubSearchAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BDC714362883E5A00071AF13 /* ViewController */ = {
@@ -202,6 +216,14 @@
 				BDBA4E1C28853FCC00770520 /* BookMarkViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BDD3523E288D410F00E17BF6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BDD3523F288D413700E17BF6 /* Repo.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +343,8 @@
 				BD76F641288826890087F555 /* GitHubSearchViewModel.swift in Sources */,
 				BDC714352883E55C0071AF13 /* TabBarController.swift in Sources */,
 				BD2C1AE82887E154002A149E /* GitHubSearchView.swift in Sources */,
+				BDD35240288D413700E17BF6 /* Repo.swift in Sources */,
+				BD38F2BD288AAB7300CC54F8 /* GitHubSearchAPI.swift in Sources */,
 				BD2F4AB628816C4400C3BEA3 /* GitHubSearchViewController.swift in Sources */,
 				BD2F4AB228816C4400C3BEA3 /* AppDelegate.swift in Sources */,
 				BDBA4E1D28853FCC00770520 /* BookMarkViewController.swift in Sources */,

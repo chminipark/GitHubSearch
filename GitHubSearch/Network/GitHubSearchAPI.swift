@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum GitHubSearchAPI {
-    case searchRepo(text: String)
+    case searchRepository(text: String)
 }
 
 extension GitHubSearchAPI: TargetType {
@@ -27,7 +27,7 @@ extension GitHubSearchAPI: TargetType {
     
     var task: Task {
         switch self {
-        case .searchRepo(let text):
+        case .searchRepository(let text):
             let params: [String: String] = [
                 "q": text
             ]

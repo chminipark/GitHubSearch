@@ -8,8 +8,7 @@
 import UIKit
 
 final class GitHubSearchView: UIView {
-
-    lazy var tableView: UITableView = {
+    let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
@@ -24,11 +23,9 @@ final class GitHubSearchView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) error")
     }
-    
 }
 
 extension GitHubSearchView {
-    
     func setupView() {
         [tableView].forEach {
             addSubview($0)
@@ -42,5 +39,4 @@ extension GitHubSearchView {
         tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
     }
-    
 }

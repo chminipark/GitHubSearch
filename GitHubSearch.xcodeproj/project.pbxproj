@@ -20,6 +20,7 @@
 		BDD35240288D413700E17BF6 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3523F288D413700E17BF6 /* Repo.swift */; };
 		BDF2F1AA288D55000062053A /* GitHubSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2F1A9288D55000062053A /* GitHubSearchRepository.swift */; };
 		BDF2F1AD288E649A0062053A /* GitHubSearchResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2F1AC288E649A0062053A /* GitHubSearchResponseDTO+Mapping.swift */; };
+		BDF2F1B0288E73F60062053A /* GitHubSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2F1AF288E73F60062053A /* GitHubSearchUseCase.swift */; };
 		D4EFF964BCEE82B79E506276 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E234541B5D640F83DCA267E /* Pods_GitHubSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		BDD3523F288D413700E17BF6 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		BDF2F1A9288D55000062053A /* GitHubSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepository.swift; sourceTree = "<group>"; };
 		BDF2F1AC288E649A0062053A /* GitHubSearchResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GitHubSearchResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		BDF2F1AF288E73F60062053A /* GitHubSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUseCase.swift; sourceTree = "<group>"; };
 		C6716F22A269D5AAB32CADF4 /* Pods-GitHubSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.release.xcconfig"; path = "Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.release.xcconfig"; sourceTree = "<group>"; };
 		FE0DAA8ED9F621F03D333F04 /* Pods-GitHubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +115,8 @@
 		BD2C1ADD2887DB65002A149E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				BDD3523E288D410F00E17BF6 /* Entity */,
+				BDF2F1AE288E73B10062053A /* UseCases */,
+				BDD3523E288D410F00E17BF6 /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -224,12 +227,12 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		BDD3523E288D410F00E17BF6 /* Entity */ = {
+		BDD3523E288D410F00E17BF6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				BDD3523F288D413700E17BF6 /* Repo.swift */,
 			);
-			path = Entity;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		BDF2F1A8288D54E30062053A /* Repository */ = {
@@ -246,6 +249,14 @@
 				BDF2F1AC288E649A0062053A /* GitHubSearchResponseDTO+Mapping.swift */,
 			);
 			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		BDF2F1AE288E73B10062053A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2F1AF288E73F60062053A /* GitHubSearchUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +375,7 @@
 			files = (
 				BD76F641288826890087F555 /* GitHubSearchViewModel.swift in Sources */,
 				BDC714352883E55C0071AF13 /* TabBarController.swift in Sources */,
+				BDF2F1B0288E73F60062053A /* GitHubSearchUseCase.swift in Sources */,
 				BDF2F1AD288E649A0062053A /* GitHubSearchResponseDTO+Mapping.swift in Sources */,
 				BD2C1AE82887E154002A149E /* GitHubSearchView.swift in Sources */,
 				BDD35240288D413700E17BF6 /* Repo.swift in Sources */,

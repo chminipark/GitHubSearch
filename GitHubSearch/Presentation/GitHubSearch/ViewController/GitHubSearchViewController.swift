@@ -10,11 +10,15 @@ import RxSwift
 import RxCocoa
 import Moya
 
-class GitHubSearchViewController: UIViewController {
+final class GitHubSearchViewController: UIViewController {
+    let gitHubSearchView = GitHubSearchView()
+    let gitHubSearchViewModel = GitHubSearchViewModel(
+        gitHubSearchUseCase: GitHubSearchUseCase(
+            gitHubSearchRepository: DefaultGitHubSearchRepository()
+        )
+    )
     
-    lazy var gitHubSearchView = GitHubSearchView()
-    lazy var gitHubSearchViewModel = GitHubSearchViewModel()
-    lazy var searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
     
     private lazy var input = GitHubSearchViewModel.Input(
         searchBarText: searchController.searchBar.rx.text.orEmpty.asDriver()
@@ -40,19 +44,6 @@ class GitHubSearchViewController: UIViewController {
         super.viewDidLoad()
         setup()
         bind()
-        
-//        let provider = MoyaProvider<GitHubSearchAPI>(plugins: [GitHubSearchAPIPlugin()])
-//        let searchText = "RxSwift"
-//        provider.request(.searchRepo(text: searchText)) { result in
-//            switch result {
-//            case .success(let response):
-//                let decoded = try? response.map(GitHubRepoSearchResponse.self)
-//                print(decoded?.repositories.first?.fullName)
-//
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
     }
     
     private func setup() {
@@ -76,13 +67,12 @@ class GitHubSearchViewController: UIViewController {
     }
     
     private func bind() {
-        output.testText
-            .drive(onNext: { text in
-                print(text)
+        output.repoList
+            .drive(onNext: { data in
+                print(data.first?.fullName)
             })
             .disposed(by: disposeBag)
     }
-    
 }
 
 extension GitHubSearchViewController: UITableViewDelegate, UITableViewDataSource {

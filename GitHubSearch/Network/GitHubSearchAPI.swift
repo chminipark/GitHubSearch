@@ -42,6 +42,6 @@ extension GitHubSearchAPI: TargetType {
 
 final class GitHubSearchAPIPlugin: PluginType {
     func willSend(_ request: RequestType, target: TargetType) {
-        print(request.request?.url?.description)
+        print("😈😈😈 URL : \(request.request?.url?.description ?? "")")
     }
 }

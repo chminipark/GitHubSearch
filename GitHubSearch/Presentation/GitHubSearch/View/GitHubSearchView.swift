@@ -7,10 +7,6 @@
 
 import UIKit
 
-final class GitHubSearchTableViewCell: UITableViewCell {
-    
-}
-
 final class GitHubSearchView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView()

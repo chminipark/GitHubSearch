@@ -27,14 +27,6 @@ final class GitHubSearchViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    let data: Array<String> = {
-        var data = [String]()
-        for i in stride(from: 1, through: 50, by: 1) {
-            data.append(String(i))
-        }
-        return data
-    }()
-    
     override func loadView() {
         super.loadView()
         view = gitHubSearchView
@@ -52,7 +44,6 @@ final class GitHubSearchViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         configureSearchBar()
-        configureGitHubSearchView()
     }
     
     private func configureSearchBar() {
@@ -61,34 +52,16 @@ final class GitHubSearchViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
     }
     
-    private func configureGitHubSearchView() {
-        gitHubSearchView.tableView.delegate = self
-        gitHubSearchView.tableView.dataSource = self
-    }
-    
     private func bind() {
         output.repoList
-            .drive(onNext: { data in
-                print(data.first?.fullName)
-            })
+            .drive(gitHubSearchView.tableView.rx.items(
+                cellIdentifier: Constant.View.gitHubSearchTableViewCell,
+                cellType: GitHubSearchTableViewCell.self)
+            ) { (index: Int, data: Repo, cell: GitHubSearchTableViewCell) in
+                var content = cell.defaultContentConfiguration()
+                content.text = data.fullName
+                cell.contentConfiguration = content
+            }
             .disposed(by: disposeBag)
     }
-}
-
-extension GitHubSearchViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = data[indexPath.row]
-        cell.contentConfiguration = content
-        
-        return cell
-    }
-    
 }

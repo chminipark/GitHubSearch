@@ -7,10 +7,17 @@
 
 import UIKit
 
+final class GitHubSearchTableViewCell: UITableViewCell {
+    
+}
+
 final class GitHubSearchView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(
+            GitHubSearchTableViewCell.self,
+            forCellReuseIdentifier: Constant.View.gitHubSearchTableViewCell
+        )
         return tableView
     }()
     

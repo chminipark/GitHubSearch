@@ -14,7 +14,7 @@ GitHub API를 활용한 깃헙 레포 검색 앱
     - Pagination prefetching 방식
     - debounce
 - 디테일 웹 뷰
-    - WebView 기반 연결
+    - WebView 기반 연결 `SFSafariViewController` 사용
     - 링크 클립보드 복사
 - 즐겨찾기 뷰
     - 즐겨찾기 목록 관리

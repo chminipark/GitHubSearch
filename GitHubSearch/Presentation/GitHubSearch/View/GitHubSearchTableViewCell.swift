@@ -8,5 +8,9 @@
 import UIKit
 
 final class GitHubSearchTableViewCell: UITableViewCell {
-    
+    func update(_ repo: Repo) {
+        var content = defaultContentConfiguration()
+        content.text = repo.fullName
+        contentConfiguration = content
+    }
 }

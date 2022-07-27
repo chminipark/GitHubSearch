@@ -58,9 +58,7 @@ final class GitHubSearchViewController: UIViewController {
                 cellIdentifier: Constant.View.gitHubSearchTableViewCell,
                 cellType: GitHubSearchTableViewCell.self)
             ) { (index: Int, data: Repo, cell: GitHubSearchTableViewCell) in
-                var content = cell.defaultContentConfiguration()
-                content.text = data.fullName
-                cell.contentConfiguration = content
+                cell.update(data)
             }
             .disposed(by: disposeBag)
     }

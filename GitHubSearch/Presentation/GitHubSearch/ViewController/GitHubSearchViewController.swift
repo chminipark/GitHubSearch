@@ -43,6 +43,9 @@ final class GitHubSearchViewController: UIViewController {
         self.navigationItem.title = "GitHub Search"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        gitHubSearchView.tableView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
         configureSearchBar()
     }
     
@@ -61,5 +64,11 @@ final class GitHubSearchViewController: UIViewController {
                 cell.update(data)
             }
             .disposed(by: disposeBag)
+    }
+}
+
+extension GitHubSearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

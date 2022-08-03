@@ -69,6 +69,6 @@ final class GitHubSearchViewController: UIViewController {
 
 extension GitHubSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return tableView.frame.size.height / 7.5
     }
 }

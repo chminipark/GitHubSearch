@@ -7,7 +7,12 @@
 
 import UIKit
 
-final class GitHubSearchView: UIView {
+protocol CustomView {
+    func setupView()
+    func setupConstraint()
+}
+
+final class GitHubSearchView: UIView, CustomView {
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(
@@ -26,9 +31,7 @@ final class GitHubSearchView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) error")
     }
-}
-
-extension GitHubSearchView {
+    
     func setupView() {
         [tableView].forEach {
             addSubview($0)
